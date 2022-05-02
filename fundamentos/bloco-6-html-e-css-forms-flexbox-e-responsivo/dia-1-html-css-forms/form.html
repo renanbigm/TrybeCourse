@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TrybeTrip</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form action="" method="get">
+      <header>
+        <h1>TrybeTrip</h1>
+      </header>
+      <main>
+        <section id="userTextInfo">
+          <label for="inputName">Name:
+            <input type="text" minlength="10" maxlength="40" name="name" id="inputName">
+          </label>
+          <br>
+          <label for="email">Email:
+            <input type="email" minlength="10" maxlength="50" id="email" name="email">
+          </label>
+        </section>
+        <br>
+        <section id="radioOptions">
+          <label for="option1">
+            <input type="radio" name="option" id="option1" value="option1" class="options">Cidade
+          </label>   
+          <label for="option2">         
+            <input type="radio" name="option" id="option2" value="option2" class="options">Campo
+          </label>
+          <label for="option3">
+            <input type="radio" name="option" id="option3" value="option3" class="options">Praia
+          </label>
+          <label for="option4">
+            <input type="radio" name="option" id="option4" value="option4" class="options">Montanhas
+          </label>         
+        </section>
+        <section id="textSection">
+          <label for="textarea">
+            <p>Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</p>
+            <textarea name="textarea" id="textarea" cols="56" rows="10" maxlength="500"></textarea>
+          </label>
+        </section>
+        <section id="dateSection">
+          <label for="date">Date:
+            <input type="date" id="date" name="date">
+          </label>
+        </section>
+        <section id="checkSection">
+          <label for="checkbox-oportunities">
+            <input type="checkbox" name="oportunities" id="checkbox-oportunities">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+          </label>
+          <br>
+          <label for="checkbox-permission">
+            <input type="checkbox" name="permission" id="checkbox-permission">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+          </label>
+        </section>
+      </main>
+      <section id="buttonsSection">
+        <button type="submit">Enviar</button>
+        <button type="reset">Apagar</button>
+      </section>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
