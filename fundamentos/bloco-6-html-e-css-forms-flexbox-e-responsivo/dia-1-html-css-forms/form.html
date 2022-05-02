@@ -24,6 +24,7 @@
         </section>
         <br>
         <section id="radioOptions">
+          <p>Destino Preferido:</p>
           <label for="option1">
             <input type="radio" name="option" id="option1" value="option1" class="options">Cidade
           </label>   
@@ -54,13 +55,13 @@
           </label>
           <br>
           <label for="checkbox-permission">
-            <input type="checkbox" name="permission" id="checkbox-permission">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+            <input type="checkbox" name="permission" id="checkbox-permission" required checked>Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
           </label>
         </section>
       </main>
       <section id="buttonsSection">
-        <button type="submit">Enviar</button>
-        <button type="reset">Apagar</button>
+        <button type="submit" id="submitBtn">Enviar</button>
+        <button type="reset" id="resetBtn">Apagar</button>
       </section>
     </form>
     <script src="script.js"></script>
