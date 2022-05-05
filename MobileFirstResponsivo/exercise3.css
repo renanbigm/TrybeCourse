@@ -78,3 +78,21 @@ body {
   padding: 20px;
   height: 1%;
 }
+
+@media print {
+  img {
+    size: 500px;
+  }
+  
+  #header {
+    display: none;
+  }
+
+  #navigation {
+    display: none;
+  }
+
+  #footer {
+    display: none;
+  }
+}
