@@ -37,11 +37,12 @@ body {
   padding: 5px 10px;
   color: #fff;
   text-decoration: none;
-  border-right: 1px solid #fff;
+  /* border-right: 1px solid #fff; */
 }
 
 #navigation li a:hover {
   background: #383;
+  width: 100%;
 }
 
 #content-container {
@@ -94,5 +95,37 @@ body {
 
   #footer {
     display: none;
+  }
+}
+
+@media screen and (min-width: 240px) {
+  #aside {
+    display: none;
+  }
+
+  body {
+    padding: none;
+  }
+
+  img {
+    max-width: 150%;
+    text-align: center;
+  }
+
+  #navigation ul {
+    background-color: red solid 2px ;
+    display: flex;
+    flex-flow: column;
+  }
+
+  #navigation {
+    margin-top: 23%;
+    
+  }
+
+  #header {
+    width: 100%;
+    top: 0;
+    position: fixed;
   }
 }
