@@ -5,3 +5,63 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    margin: 17px;
+  }
+
+  
+  .header {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    height: 160px;
+  }
+  
+  .pHeader:nth-of-type(1){
+    align-self: center;
+    font-size: 2.3rem;
+    height: 75px;
+  }
+  
+  .header .menu {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    width: 300px;
+    list-style: none;
+    font-size: 1.6rem;
+    margin-right: 8px;
+  }
+  
+  .asideContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .aside-one, .aside-two {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .aside-one h2, .aside-two h2 {
+    text-align: center;
+    font-size: 2rem;
+    height: 1px;
+  }
+  
+  .aside-one ul, .aside-two ul {
+    font-size: 1.6rem;  
+  }
+  
+  article p {
+    font-size: 2.2rem;
+    text-align: justify;
+    max-width: 2000px;
+  }
+
+
+}
