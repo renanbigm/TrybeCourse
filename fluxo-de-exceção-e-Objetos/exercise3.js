@@ -27,4 +27,9 @@ addInfoToObj(lesson2, 'turno', 'noite');
 function returnObjKeysList(obj) {
   return Object.keys(obj);
 }
-console.log(returnObjKeysList(lesson1))
+// console.log(returnObjKeysList(lesson1))
+
+function showObjLength(obj) {
+  console.log(Object.keys(obj).length);
+}
+showObjLength(lesson2)
