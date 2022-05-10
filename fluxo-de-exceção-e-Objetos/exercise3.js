@@ -32,4 +32,10 @@ function returnObjKeysList(obj) {
 function showObjLength(obj) {
   console.log(Object.keys(obj).length);
 }
-showObjLength(lesson2)
+// showObjLength(lesson2);
+
+const objValueList = (obj) => Object.values(obj);
+// console.log(objValueList(lesson3));
+
+const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
+// console.log(allLessons);
