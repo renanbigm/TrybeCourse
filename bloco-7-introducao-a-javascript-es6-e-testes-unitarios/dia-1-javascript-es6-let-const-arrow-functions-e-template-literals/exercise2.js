@@ -9,8 +9,11 @@ function fatorial(n) {  // 5*4 = 20 * 3 = 60 * 2 = 120
 const fat = (n) => (n === 0) ? 1 : (n * fat(n - 1));
 
 const fatorials = (n) => Array(n).fill().map((_, i) => 1 + i).reduce((a, b) => b * a, 1);
-// console.log(fatorials(6))
-console.log(Array.from({ length: 6 }, (_, i) => i + 1).reduce((a, b) => b * a, 1));
+
+const fatorialsFrom = (n) => Array.from({ length: 6 }, (_, i) => i + 1).reduce((a, b) => b * a, 1);
+
+// console.log();
+
 
 // .fill -> preenche o array com os valores 
 // .map -> cria novo array do mesmo tamanho do array original e altera os valores de acordo
@@ -31,7 +34,7 @@ function longest(str) {
 }
 
 const longestSort = (str) => str.split(' ').sort((a, b) => b.length - a.length)[0];
-
+                                                  
 const longestReduce = (str) => str.split(' ').reduce((a, b) => a.length > b.length ? a : b, '') 
 
 // console.log(longestSort('Antônio foi no banheiro e não sabemos o que aconteceu'));
