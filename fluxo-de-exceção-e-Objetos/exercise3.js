@@ -40,6 +40,15 @@ const objValueList = (obj) => Object.values(obj);
 const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 // console.log(allLessons);
 
+// const getNumberOfStudents = (obj) => {
+//   let total = 0;
+//   const array = Object.keys(obj);
+//   for (index in array) {
+//     total += obj[array[index]].numeroEstudantes;
+//   }
+//   return total;
+// };
+
 function returnTotalStudents(obj) {
   const students1 = obj.lesson1.numeroEstudantes;
   const students2 = obj.lesson2.numeroEstudantes;
@@ -47,4 +56,19 @@ function returnTotalStudents(obj) {
 
   return students1 + students2 + students3;
 }
-console.log(returnTotalStudents(allLessons));
+// console.log(returnTotalStudents(allLessons));
+
+const getValue = (obj, position) => Object.values(obj)[position];
+// console.log(getValue(lesson1, 0));
+
+const verifyPair = (obj, key, value) => {
+  const objArr = Object.entries(obj);
+  for (let i = 0; i < objArr.length; i += 1) {
+    if (objArr[i].includes(key, value)) {
+      return true;
+    }     
+  }
+  return false;
+}
+console.log(verifyPair(lesson3, 'professor', 'Maria Clara'));
+// console.log(verifyPair(lesson3, 'turno', 'noite'));
