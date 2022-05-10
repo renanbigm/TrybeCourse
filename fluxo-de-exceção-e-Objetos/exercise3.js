@@ -64,9 +64,7 @@ const getValue = (obj, position) => Object.values(obj)[position];
 const verifyPair = (obj, key, value) => {
   const objArr = Object.entries(obj);
   for (let i = 0; i < objArr.length; i += 1) {
-    if (objArr[i].includes(key, value)) {
-      return true;
-    }     
+    if (objArr[i].includes(key, value)) return true;
   }
   return false;
 }
