@@ -39,3 +39,12 @@ const objValueList = (obj) => Object.values(obj);
 
 const allLessons = Object.assign({}, { lesson1, lesson2, lesson3 });
 // console.log(allLessons);
+
+function returnTotalStudents(obj) {
+  const students1 = obj.lesson1.numeroEstudantes;
+  const students2 = obj.lesson2.numeroEstudantes;
+  const students3 = obj.lesson3.numeroEstudantes;
+
+  return students1 + students2 + students3;
+}
+console.log(returnTotalStudents(allLessons));
