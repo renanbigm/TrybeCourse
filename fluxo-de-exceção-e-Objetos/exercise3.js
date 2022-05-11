@@ -68,5 +68,18 @@ const verifyPair = (obj, key, value) => {
   }
   return false;
 }
+
+
 console.log(verifyPair(lesson3, 'professor', 'Maria Clara'));
+
 // console.log(verifyPair(lesson3, 'turno', 'noite'));
+
+// const verifyPair = (obj, key, value) => Object.entries(obj).forEach((word) => (word.includes(key) && word.includes(value))) ? true : false;
+// 
+// Object.entries(lesson3).forEach((word) => {
+//   if (word) {
+//     console.log(word.includes('turnoo' && 'Maria Clara'));
+//     return true;
+//   } 
+//   return false;
+// });
