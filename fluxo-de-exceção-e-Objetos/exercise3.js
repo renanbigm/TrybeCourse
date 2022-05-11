@@ -61,18 +61,18 @@ function returnTotalStudents(obj) {
 const getValue = (obj, position) => Object.values(obj)[position];
 // console.log(getValue(lesson1, 0));
 
-const verifyPair = (obj, key, value) => {
-  const objArr = Object.entries(obj);
-  for (let i = 0; i < objArr.length; i += 1) {
-    if (objArr[i].includes(key, value)) return true;
-  }
-  return false;
-}
+const verifyPair = (obj, key, value) => obj[key] === value;
+  
+//   const objArr = Object.entries(obj);
+//   for (let i = 0; i < objArr.length; i += 1) {
+//     if (objArr[i].includes(key, value)) return true;
+//   }
+//   return false;
+// }
 
+// console.log(verifyPair(lesson3, 'professor', 'Maria Clara'));
 
-console.log(verifyPair(lesson3, 'professor', 'Maria Clara'));
-
-// console.log(verifyPair(lesson3, 'turno', 'noite'));
+// console.log(verifyPair(lesson1, 'turno', 'noite'));
 
 // const verifyPair = (obj, key, value) => Object.entries(obj).forEach((word) => (word.includes(key) && word.includes(value))) ? true : false;
 // 

@@ -19,15 +19,36 @@ const allLessons = {
   }
 }
 
-function getMathStudents(obj) {
-  const ob = Object.values(obj);
+function getTotalStudents(obj, name) {
+  const objValues = Object.values(obj);
   let totalMathStudents = 0;
 
-  for (let i = 0; i < ob.length; i += 1) {
-    if (ob[i].materia === 'Matemática') {
-      totalMathStudents += ob[i].numeroEstudantes;
+  for (let i = 0; i < objValues.length; i += 1) {
+    if (objValues[i].professor === name) {
+      totalMathStudents += objValues[i].numeroEstudantes;
     }
   }
   return totalMathStudents;
 }
-console.log(getMathStudents(allLessons));
+//console.log(getMathStudents(allLessons, 'Matemática'));
+
+const report = (obj, name) => {
+  return Object.values(obj).reduce((objAcumulador, objAtual) => {
+    if (objAtual.professor === name) {
+      objAcumulador.aulas.push(objAtual.materia);
+    }
+    return objAcumulador;
+  }, {
+    professor: name,
+    aulas: [],
+    estudantes: getTotalStudents(obj, name)
+  }); 
+}
+console.log(report(allLessons, 'Carlos'));
+
+// for (let i = 0; i < objValues.length; i += 1) {
+//   if (objValues[i].professor === name) {
+//     report.aulas.push(objValues[i].materia);
+//     report.estudantes = getTotalStudents(obj, objValues[i].materia)
+//   } 
+// }
