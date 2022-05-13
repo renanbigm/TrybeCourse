@@ -10,4 +10,4 @@ describe('testando a função sum', () => {
   test('sums two values', () => {
     expect(() => sum(4, '6')).toThrowError('Tipo inválido, insira um número do tipo número');
   });
-});
+})
