@@ -5,7 +5,7 @@ const books = [
     genre: 'Fantasia',
     author: {
       name: 'George R. R. Martin',
-      birthYear: 1948,
+      birthYear: 1910,
     },
     releaseYear: 1991,
   },
@@ -15,7 +15,7 @@ const books = [
     genre: 'Fantasia',
     author: {
       name: 'J. R. R. Tolkien',
-      birthYear: 1892,
+      birthYear: 1920,
     },
     releaseYear: 1954,
   },
@@ -25,7 +25,7 @@ const books = [
     genre: 'Ficção Científica',
     author: {
       name: 'Isaac Asimov',
-      birthYear: 1920,
+      birthYear: 1925,
     },
     releaseYear: 1951,
   },
@@ -35,7 +35,7 @@ const books = [
     genre: 'Ficção Científica',
     author: {
       name: 'Frank Herbert',
-      birthYear: 1920,
+      birthYear: 1924,
     },
     releaseYear: 1965,
   },
@@ -45,7 +45,7 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'Stephen King',
-      birthYear: 1947,
+      birthYear: 1932,
     },
     releaseYear: 1986,
   },
@@ -55,7 +55,7 @@ const books = [
     genre: 'Terror',
     author: {
       name: 'H. P. Lovecraft',
-      birthYear: 1890,
+      birthYear: 1932
     },
     releaseYear: 1928,
   },
@@ -102,4 +102,18 @@ const expectedResult = true;
 function someBookWasReleaseOnThe80s() {
   return books.some((book) => book.releaseYear > 1779 && book.releaseYear < 1990);
 }
-console.log(someBookWasReleaseOnThe80s());
+// console.log(someBookWasReleaseOnThe80s());
+
+//exercise 7
+function authorUnique() {
+  return books.every((element, index, book) => {
+    if (book[index + 1]) return element.author.birthYear !== book[index + 1].author.birthYear;
+    return true;
+  });
+}
+console.log(authorUnique())
+
+// return books.every((book) =>
+// !books.some((bookSome) =>
+//   (bookSome.author.birthYear === book.author.birthYear)
+//   && (bookSome.author.name !== book.author.name)));
