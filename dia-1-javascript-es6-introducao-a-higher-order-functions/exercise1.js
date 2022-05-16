@@ -64,7 +64,7 @@ const books = [
 function authorBornIn1947() {
   return books.find((element) => element.author.birthYear === 1947).author.name;
 }
-console.log(authorBornIn1947());
+// console.log(authorBornIn1947());
 
 function smallerName() {
   let nameBook = books[0].name;
@@ -75,4 +75,14 @@ function smallerName() {
   });
   return nameBook;
 }
-console.log(smallerName())
+// console.log(smallerName())
+
+function getNamedBook() {
+  return books.find((element) => element.name.length === 26);
+}
+// console.log(getNamedBook())
+
+function booksOrderedByReleaseYearDesc() {
+  return books.sort((a, b) => b.releaseYear - a.releaseYear);
+}
+console.log(booksOrderedByReleaseYearDesc())
