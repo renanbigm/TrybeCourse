@@ -100,5 +100,6 @@ function everyoneWasBornOnSecXX() {
 const expectedResult = true;
 
 function someBookWasReleaseOnThe80s() {
-  // escreva seu código aqui
+  return books.some((book) => book.releaseYear > 1779 && book.releaseYear < 1990);
 }
+console.log(someBookWasReleaseOnThe80s());
