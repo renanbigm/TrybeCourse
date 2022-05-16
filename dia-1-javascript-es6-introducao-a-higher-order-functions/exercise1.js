@@ -60,12 +60,13 @@ const books = [
     releaseYear: 1928,
   },
 ];
-
+//exercise 1
 function authorBornIn1947() {
   return books.find((element) => element.author.birthYear === 1947).author.name;
 }
 // console.log(authorBornIn1947());
 
+//exercise 2
 function smallerName() {
   let nameBook = books[0].name;
   books.forEach(element => {
@@ -77,12 +78,27 @@ function smallerName() {
 }
 // console.log(smallerName())
 
+//exercise 3
 function getNamedBook() {
   return books.find((element) => element.name.length === 26);
 }
 // console.log(getNamedBook())
 
+//exercise 4
 function booksOrderedByReleaseYearDesc() {
   return books.sort((a, b) => b.releaseYear - a.releaseYear);
 }
-console.log(booksOrderedByReleaseYearDesc())
+// console.log(booksOrderedByReleaseYearDesc())
+
+//exercise 5
+function everyoneWasBornOnSecXX() {
+  return books.every((author) => author.author.birthYear > 1900 && author.author.birthYear < 2001);
+}
+// console.log(everyoneWasBornOnSecXX());
+
+//exercise 6
+const expectedResult = true;
+
+function someBookWasReleaseOnThe80s() {
+  // escreva seu código aqui
+}
