@@ -82,6 +82,16 @@ const getFantasyAndFictionGenre = () => books.filter((element) => element.genre 
 // console.log(getFantasyAndFictionGenre());
 
 //exercise 4
-const getSortedOldBooks = () => books.filter((element) => element.releaseYear < 1962).sort((a, b) => a.releaseYear - b.releaseYear);
-console.log(getSortedOldBooks());
+// const currentYear = new Date().getFullYear();
+const getSortedOldBooks = () => books.filter((element) => element.releaseYear < (new Date().getFullYear() - 60))
+.sort((a, b) => a.releaseYear - b.releaseYear);
+// console.log(getSortedOldBooks());
 
+// exercise 5
+const getSortedAuthorsFantasyFiction = () => {
+  return books.filter((element) => element.genre !== 'Terror')
+    .map((element) => element.author.name).sort();
+}
+// console.log(getSortedAuthorsFantasyFiction());
+
+//exercise 6
