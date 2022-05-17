@@ -61,11 +61,14 @@ const books = [
   },
 ];
 // name - genre - author.name
+
+//exercise 1
 function formatedBookNames() {
   return books.map((element) => `${element.name} - ${element.genre} - ${element.author.name}`);
 }
 // console.log(formatedBookNames());
 
+//exercise 2
 const getSortedAuthorsAges = () => books.map((element) => {
   return { 
     author: element.author.name, 
@@ -74,5 +77,11 @@ const getSortedAuthorsAges = () => books.map((element) => {
 }).sort((a, b) => a.age - b.age);
 // console.log(getSortedAuthorsAges());
 
+//exercise 3
 const getFantasyAndFictionGenre = () => books.filter((element) => element.genre !== 'Terror');
-console.log(getFantasyAndFictionGenre())
+// console.log(getFantasyAndFictionGenre());
+
+//exercise 4
+const getSortedOldBooks = () => books.filter((element) => element.releaseYear < 1962).sort((a, b) => a.releaseYear - b.releaseYear);
+console.log(getSortedOldBooks());
+
