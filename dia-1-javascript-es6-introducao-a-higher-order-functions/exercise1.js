@@ -1,3 +1,13 @@
+const arrays = [
+  ['1', '2', '3'],
+  [true],
+  [4, 5, 6],
+];
+
+// 1 - Dada uma matriz, transforme em um array.
+const flatten = () => arrays.reduce((result, element) => result.concat(element), []);
+// console.log(flatten());
+
 const books = [
   {
     id: 1,
@@ -60,46 +70,18 @@ const books = [
     releaseYear: 1928,
   },
 ];
-// name - genre - author.name
 
-//exercise 1
-function formatedBookNames() {
-  return books.map((element) => `${element.name} - ${element.genre} - ${element.author.name}`);
-}
-// console.log(formatedBookNames());
+//2 - Crie uma string com os nomes de todas as pessoas autoras.
+const reduceNames = () => books.reduce((string, element) => string += element.author.name, '');
+// function reduceNames() {
+//   const names = books.reduce((acc, book, index, array) => {
+//     if (index === array.length - 1) return `${acc} ${book.author.name}.`;
+//     return `${acc} ${book.author.name},`;
+//   }, '');
+//   return names;
+// }
+// console.log(reduceNames())
 
-//exercise 2
-const getSortedAuthorsAges = () => books.map((element) => {
-  return { 
-    author: element.author.name, 
-    age: (element.releaseYear - element.author.birthYear),
-  };
-}).sort((a, b) => a.age - b.age);
-// console.log(getSortedAuthorsAges());
-
-//exercise 3
-const getFantasyAndFictionGenre = () => books.filter((element) => element.genre !== 'Terror');
-// console.log(getFantasyAndFictionGenre());
-
-//exercise 4
-// const currentYear = new Date().getFullYear();
-const getSortedOldBooks = () => books.filter((element) => element.releaseYear < (new Date().getFullYear() - 60))
-.sort((a, b) => a.releaseYear - b.releaseYear);
-// console.log(getSortedOldBooks());
-
-// exercise 5
-const getSortedAuthorsFantasyFiction = () => {
-  return books.filter((element) => element.genre !== 'Terror')
-    .map((element) => element.author.name).sort();
-}
-// console.log(getSortedAuthorsFantasyFiction());
-
-//exercise 6
-const getOldBooks = () => books.filter((element) => element.releaseYear < (new Date().getFullYear() - 60))
-  .map((element) => element.name);
-// console.log(getOldBooks());
-
-//exercise 7
-const authorWith3DotsOnName = () => books.find((element) => element.author.name.split('.').length === 4).name
-
-console.log(authorWith3DotsOnName())
+//3- Calcule a média de idade que as pessoas autoras tinham quando seus respectivos livros foram lançados.
+ const averageYear = () => books.reduce((average, element) => average + element.releaseYear - element.author.birthYear, 0) / books.length;
+ console.log(averageYear());
