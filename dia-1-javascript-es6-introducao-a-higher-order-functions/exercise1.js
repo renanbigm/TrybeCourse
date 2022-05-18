@@ -95,3 +95,11 @@ const getSortedAuthorsFantasyFiction = () => {
 // console.log(getSortedAuthorsFantasyFiction());
 
 //exercise 6
+const getOldBooks = () => books.filter((element) => element.releaseYear < (new Date().getFullYear() - 60))
+  .map((element) => element.name);
+// console.log(getOldBooks());
+
+//exercise 7
+const authorWith3DotsOnName = () => books.find((element) => element.author.name.split('.').length === 4).name
+
+console.log(authorWith3DotsOnName())
