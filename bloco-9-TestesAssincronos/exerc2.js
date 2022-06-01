@@ -1,3 +1,4 @@
+//exercicio 3
 const getPlanet = () => {
   const mars = {
     name: "Mars",
@@ -9,4 +10,18 @@ const getPlanet = () => {
   console.log("Returned planet: ", mars);
 };
 
-setTimeout(() => getPlanet(), 4000) ; // imprime Marte depois de 4 segundos
+// setTimeout(() => getPlanet(), 4000) ; // imprime Marte depois de 4 segundos
+
+//Exercício 4
+const messageDelay = () => Math.floor(Math.random() * 5000);
+
+const getMarsTemperature = () => {
+  const maxTemperature = 58;
+  return Math.floor(Math.random() * maxTemperature);
+};
+
+const sendMarsTemperature = () => {
+  setTimeout(() => console.log(`Mars temperature is: ${getMarsTemperature()} degree Celsius`), messageDelay());
+};
+
+sendMarsTemperature(); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
