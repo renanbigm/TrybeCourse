@@ -2,10 +2,12 @@
 
 const showCoins = (coins) => {
   const ul = document.querySelector('#criptoslist');
-  coins.forEach((element) => {
+  coins.forEach((element, index) => {
     const li = document.createElement('li');
-    li.innerText = element.symbol;
-    ul.appendChild(li); 
+    if(index < 10) {
+      li.innerText = element.symbol;
+      ul.appendChild(li);
+    }
   });
 };
 
