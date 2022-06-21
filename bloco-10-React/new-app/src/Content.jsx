@@ -7,12 +7,12 @@ const conteudos = [
     status: 'Aprendido'
   },
   {
-    conteudo: 'Composicao de Componentes',
+    conteudo: 'Composição de Componentes',
     bloco: 11,
     status: 'Aprendendo',
   },
   {
-    conteudo: 'Composicao de Estados',
+    conteudo: 'Composição de Estados',
     bloco: 12,
     status: 'Aprenderei'
   },
@@ -21,21 +21,20 @@ const conteudos = [
     bloco: 16,
     status: 'Aprenderei'
   },
-];
-
+]
 class Content extends React.Component {
   render() {
-    return (
-      <div>
-          {conteudos.map((el) => (
-            <div>
-              <h4> {`O conteúdo é: ${el.conteudo}`} </h4>
-              <p> {`Status: ${el.status}`} </p>
-              <p> {`Bloco: ${el.bloco}`} </p>
-            </div>
-          ))}
+    return(
+      <div className="content">
+        {conteudos.map((el) => (
+          <div key={el.conteudo} className='card'>
+            <h4>{`O conteudo é: ${el.conteudo}`}</h4>
+            <p>{`status: ${el.status}`}</p>
+            <p>{`bloco: ${el.bloco}`}</p>
+          </div>
+        ))}
       </div>
-    )
+    );
   }
 }
 
