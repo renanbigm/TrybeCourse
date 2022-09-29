@@ -1,0 +1,1 @@
+console.log((60 / (1.70 ** 2)).toFixed(2));
