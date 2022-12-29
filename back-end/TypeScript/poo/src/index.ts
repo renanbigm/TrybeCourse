@@ -2,6 +2,7 @@ import Client from "./Client";
 import Request from "./Request";
 import Order from "./Order";
 import Data from "./Data";
+import { myFunc, Subclass, Superclass } from "./Superclass";
 
 const client = new Client('Larissa');
 
@@ -14,7 +15,13 @@ const order = new Order(client, [pizza, refri], 'dinheiro', 0.3);
 // console.log(order.totalCost());
 // console.log(order.costWithDiscount());
 
-const testDate = new Data(29, 1, 1989);
+// const testDate = new Data(29, 1, 1989);
 
 // console.log(testDate.getMonthName());
-console.log(testDate.format('e'));
+// console.log(testDate.format('e'));
+
+const sup = new Superclass();
+const sub = new Subclass();
+
+console.log(myFunc(sup));
+console.log(myFunc(sub));
