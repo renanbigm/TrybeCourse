@@ -5,6 +5,7 @@ import Data from "./Data";
 import { myFunc, Subclass, Superclass } from "./Superclass";
 import MyClass from "./MyClass";
 import { ConsoleLogger, ConsoleLogger2, ExampleDatabase } from "./ConsoleLogger";
+import Person from "./exercíciosFixação/Person";
 
 const client = new Client('Larissa');
 
@@ -36,13 +37,21 @@ const order = new Order(client, [pizza, refri], 'dinheiro', 0.3);
 
 //----------------------------------------------------------------------
 
-const log1 = new ConsoleLogger();
-const log2 = new ConsoleLogger2();
+// const log1 = new ConsoleLogger();
+// const log2 = new ConsoleLogger2();
 
-const data1  = new ExampleDatabase(log1);
-const data2  = new ExampleDatabase(log2);
-const data3  = new ExampleDatabase();
+// const data1  = new ExampleDatabase(log1);
+// const data2  = new ExampleDatabase(log2);
+// const data3  = new ExampleDatabase();
 
-data1.save('aa', 'asda')
-data2.save('bb', 'basdasd')
-data3.save('cct', 'casdac')
+// data1.save('aa', 'asda')
+// data2.save('bb', 'basdasd')
+// data3.save('cct', 'casdac')
+
+//-----------------------------------------------------------------------
+
+const person = new Person('renan', new Date('2019/07/01'));
+
+console.log(person.validateName());
+console.log(person.validateAge());
+console.log(person.validateDate());
