@@ -3,6 +3,8 @@ import Request from "./Request";
 import Order from "./Order";
 import Data from "./Data";
 import { myFunc, Subclass, Superclass } from "./Superclass";
+import MyClass from "./MyClass";
+import { ConsoleLogger, ConsoleLogger2, ExampleDatabase } from "./ConsoleLogger";
 
 const client = new Client('Larissa');
 
@@ -19,9 +21,28 @@ const order = new Order(client, [pizza, refri], 'dinheiro', 0.3);
 
 // console.log(testDate.getMonthName());
 // console.log(testDate.format('e'));
+//----------------------------------------------------------------------
+// const sup = new Superclass();
+// const sub = new Subclass();
 
-const sup = new Superclass();
-const sub = new Subclass();
+// console.log(myFunc(sup));
+// console.log(myFunc(sub));
+//-----------------------------------------------------------------------
 
-console.log(myFunc(sup));
-console.log(myFunc(sub));
+// const objt = new MyClass(10);
+
+// console.log(objt.myNumber);
+// console.log(objt.myFunc(4));
+
+//----------------------------------------------------------------------
+
+const log1 = new ConsoleLogger();
+const log2 = new ConsoleLogger2();
+
+const data1  = new ExampleDatabase(log1);
+const data2  = new ExampleDatabase(log2);
+const data3  = new ExampleDatabase();
+
+data1.save('aa', 'asda')
+data2.save('bb', 'basdasd')
+data3.save('cct', 'casdac')
