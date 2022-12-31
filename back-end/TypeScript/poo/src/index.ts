@@ -6,6 +6,11 @@ import { myFunc, Subclass, Superclass } from "./Superclass";
 import MyClass from "./MyClass";
 import { ConsoleLogger, ConsoleLogger2, ExampleDatabase } from "./ConsoleLogger";
 import Person from "./exercíciosFixação/Person";
+import Student from "./exercíciosFixação/Student";
+import IEmployee from "./exercíciosFixação/IEmployee";
+import Subject from "./exercíciosFixação/Subject";
+import MeleeCharacter from "./exerciciosPolimorfismo/MeleeCharacter";
+import Character from "./exerciciosPolimorfismo/Character";
 
 const client = new Client('Larissa');
 
@@ -50,8 +55,41 @@ const order = new Order(client, [pizza, refri], 'dinheiro', 0.3);
 
 //-----------------------------------------------------------------------
 
-const person = new Person('renan', new Date('2019/07/01'));
+const person = new Student('renan', new Date('2019/07/01'));
 
-console.log(person.validateName());
-console.log(person.validateAge());
-console.log(person.validateDate());
+person.examsGrades = [6, 7, 5, 8];
+person.assigmentsGrades = [10, 5];
+
+// console.log(person.validateName());
+// console.log(person.validateAge());
+// console.log(person.validateDate());
+
+// console.log(person.sumGrades());
+// console.log(person.sumAverageGrade());
+// console.log(person.generateEnrollment());
+
+const funcionario: IEmployee = {
+  registration: 'aoiuefhiuqeiuqu',
+  salary: 4000.00,
+  admissionDate: new Date(),
+
+  generateRegistration(): string {
+    const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+
+    return `FNC${randomStr}`;
+  }
+};
+
+// console.log(funcionario);
+
+const materia = new Subject('m');
+
+// console.log(materia.name)
+function asda(character: Character) {
+  character.specialMove();
+  character.talk();
+}
+
+const char = new MeleeCharacter();
+
+console.log(asda(char))
