@@ -32,17 +32,23 @@ function saveTasks() {
   saveToLocalStorage(tasksToSave);
 }
 
-function moveTask() {
+function moveTaskBtns() {
   const target = event.target;
   const validation = target.id.includes('up');
-
+  
   const checkList = validation ? 'previousElementSibling' : 'nextElementSibling';
   const movement = validation ? 'beforebegin' : 'afterend';
- 
+  
   const selectedTask = document.querySelector('.selected');
   
   if (selectedTask[checkList]) {
     selectedTask[checkList]
       .insertAdjacentElement(movement, selectedTask);
   }
+}
+
+function clearSelectedBtn() {
+  const selectedTask = document.querySelector('.selected');
+  if (!selectedTask) return;
+  ol.removeChild(selectedTask);
 }
