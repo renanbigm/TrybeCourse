@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>TrybeTrip</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="materialize/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body class="row">
+    <form action="" method="get" class="col s15">
+      <header>
+        <h1>TrybeTrip</h1>
+      </header>
+      <main class="row">
+        <section id="userTextInfo" class="input-field col s6">
+          <input type="text" minlength="10" maxlength="40" name="name" id="inputName" class="validate">
+          <label for="inputName">Name:</label>
+          <br>
+        </section>
+        <section class="input-field col s6">
+          <input type="email" minlength="10" maxlength="50" id="email" name="email" class="validate">
+          <label for="email">Email:</label>
+        </section> 
+        <section id="radioOptions">
+          <p>Destino Preferido:</p>
+          <label for="option1">
+            <input type="radio" name="option" id="option1" value="option1" class="options">Cidade
+          </label>   
+          <label for="option2">         
+            <input type="radio" name="option" id="option2" value="option2" class="options">Campo
+          </label>
+          <label for="option3">
+            <input type="radio" name="option" id="option3" value="option3" class="options">Praia
+          </label>
+          <label for="option4">
+            <input type="radio" name="option" id="option4" value="option4" class="options">Montanhas
+          </label>         
+        </section>
+        <section id="textSection" class="input-field col s10">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea name="textarea" id="textarea" cols="60" rows="10" maxlength="500" class="materialize-textarea" placeholder="Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?"></textarea>
+          <label for="textarea"></label>
+        </section>
+        <section id="dateSection">
+          <input type="date" id="date" name="date" class="datepicker">
+          <label for="date">Date:</label>
+        </section>
+        <section id="checkSection">
+          <label for="checkbox-oportunities">
+            <input type="checkbox" name="oportunities" id="checkbox-oportunities">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+          </label>
+          <label for="checkbox-permission">
+            <input type="checkbox" name="permission" id="checkbox-permission" required checked>Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+          </label>
+        </section>
+      </main>
+      <section id="buttonsSection">
+        <button type="submit" id="submitBtn" class="btn btn-success">Enviar</button>
+        <button type="reset" id="resetBtn" class="btn btn-danger">Apagar</button>
+      </section>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
