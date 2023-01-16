@@ -4,7 +4,6 @@ function createTaskBtn() {
   const btn = document.querySelector('#criar-tarefa');
   btn.addEventListener('click', () => {
     const getTask = handleInputText();
-
     createTasksList(getTask);
   });
 }
@@ -13,12 +12,12 @@ function clearAllTasksBtn() {
   ol.innerHTML = '';
 }
 
-function clearCompletedTasks() {
+function clearCompletedTasksBtn() {
   const completedTasks = document.querySelectorAll('.completed');
   completedTasks.forEach((task) => ol.removeChild(task));
 }
 
-function saveTasks() {
+function saveTasksBtn() {
   const allTasks = document.querySelectorAll('.tasks');
 
   const tasksToSave = [];
@@ -38,9 +37,9 @@ function moveTaskBtns() {
   
   const checkList = validation ? 'previousElementSibling' : 'nextElementSibling';
   const movement = validation ? 'beforebegin' : 'afterend';
-  
+    
   const selectedTask = document.querySelector('.selected');
-  
+
   if (selectedTask[checkList]) {
     selectedTask[checkList]
       .insertAdjacentElement(movement, selectedTask);
