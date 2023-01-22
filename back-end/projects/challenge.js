@@ -1,35 +1,66 @@
 const http = require('http');
+const url = require('url'); // string to object;
+const util = require('util'); // object to string;
+const { StringDecoder } = require('string_decoder');
 
-const req = http.request({
-  port: 3005,
-  method: 'GET'
+const port = 3334;
+const server = http.createServer((req, res) => {
+  // console.log(http.METHODS);
+  // console.log(req.headers)
+  const path = url.parse(req.url, true); // path.pathname, path.search, path.query
+  // const decoder = new StringDecoder('utf-8');
+  // const buffer = '';
+  
+  // req.on('data', (chunk) => {
+    //   console.log(chunk);
+    //   console.log('decoded --->', decoder.write(chunk));
+    // });
+    
+    res.writeHead(200, 'OK');
+    console.log(req.url);
+  // console.log(util.inspect(path.query));
+  // res.write(util.inspect(path.query));
+  res.end('Done');
 });
 
-// chunk, response content
+// server.on('connection')
 
-req.on('response', (res) => {
-  res.on('data', (chunk) => {
-    console.log(`Server say: ${chunk}`);
-  });
+server.listen(port, () => {
+  console.log(`Server up on port: ${port}.`);
 });
 
-req.end();
+// const http = require('http');
 
-const reqSocket = http.request({
-  port: 3005,
-  headers: {
-    Upgrade: 'websocket',
-    Connection: 'Upgrade'
-  }
-});
+// const req = http.request({
+//   port: 3005,
+//   method: 'GET',
+// });
 
-reqSocket.on('upgrade', (res, socket) => {
-  console.log('connected to server');
-  // socket.write('eae mano?');
-  process.stdin.pipe(socket);
-});
+// // chunk, response content
 
-reqSocket.end();
+// req.on('response', (res) => {
+//   res.on('data', (chunk) => {
+//     console.log(`Server say: ${chunk}`);
+//   });
+// });
+
+// req.end();
+
+// const reqSocket = http.request({
+//   port: 3005,
+//   headers: {
+//     Upgrade: 'websocket',
+//     Connection: 'Upgrade',
+//   },
+// });
+
+// reqSocket.on('upgrade', (res, socket) => {
+//   console.log('connected to server');
+//   // socket.write('eae mano?');
+//   process.stdin.pipe(socket);
+// });
+
+// reqSocket.end();
 
 // let net = require('net');
 // let client = new net.Socket();
