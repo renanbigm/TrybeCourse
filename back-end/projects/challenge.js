@@ -9,18 +9,30 @@ const server = http.createServer((req, res) => {
   // console.log(req.headers)
   const path = url.parse(req.url, true); // path.pathname, path.search, path.query
   // const decoder = new StringDecoder('utf-8');
-  // const buffer = '';
+  let buffer = '';
   
-  // req.on('data', (chunk) => {
-    //   console.log(chunk);
-    //   console.log('decoded --->', decoder.write(chunk));
-    // });
+  req.on('data', (chunk) => {
+      console.log('data --->', chunk);
+      console.log('decoded --->', buffer += chunk);
+      buffer += chunk;
+    });
+
+    req.on('end', (chunk) => {
+      if (chunk) {
+        buffer += chunk;
+      }
+      res.writeHead(200, 'ok');
+      // res.write(util.inspect(path.query));
+      res.write(buffer);
+
+      res.end('its done');
+    });
     
-    res.writeHead(200, 'OK');
-    console.log(req.url);
+    // res.writeHead(200, 'OK');
+    // console.log(req.url);
   // console.log(util.inspect(path.query));
   // res.write(util.inspect(path.query));
-  res.end('Done');
+  // res.end('Done');
 });
 
 // server.on('connection')
