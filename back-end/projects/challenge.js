@@ -1,28 +1,32 @@
 const http = require('http');
-const url = require('url'); // string to object;
-const util = require('util'); // object to string;
-const { StringDecoder } = require('string_decoder');
+// const url = require('url'); // string to object;
+// const util = require('util'); // object to string;
+// const { StringDecoder } = require('string_decoder');
 
 const port = 3334;
-const server = http.createServer((req, res) => {
+const server = http.createServer();
+
+server.on('request', (req, res) => {
   // console.log(http.METHODS);
   // console.log(req.headers)
-  const path = url.parse(req.url, true); // path.pathname, path.search, path.query
+  // const path = url.parse(req.url, true); // path.pathname, path.search, path.query
   // const decoder = new StringDecoder('utf-8');
   let buffer = '';
   
   req.on('data', (chunk) => {
-      console.log('data --->', chunk);
-      console.log('decoded --->', buffer += chunk);
+      // console.log('data --->', chunk);
+      // console.log('decoded --->', buffer += chunk);
       buffer += chunk;
     });
 
     req.on('end', (chunk) => {
+      // console.log(req.body);
+      // console.log(req.url);
+      console.log(chunk);
       if (chunk) {
         buffer += chunk;
       }
       res.writeHead(200, 'ok');
-      // res.write(util.inspect(path.query));
       res.write(buffer);
 
       res.end('its done');
@@ -34,8 +38,6 @@ const server = http.createServer((req, res) => {
   // res.write(util.inspect(path.query));
   // res.end('Done');
 });
-
-// server.on('connection')
 
 server.listen(port, () => {
   console.log(`Server up on port: ${port}.`);
