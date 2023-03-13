@@ -25,4 +25,17 @@ def show_asteriscs(n):
         print(n * '*')
 
 
-print(show_asteriscs(10))
+# print(show_asteriscs(10))
+
+names_list = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"]
+
+
+def show_biggest_name(names):
+    bigger_name = ''
+    for name in names:
+        if len(name) > len(bigger_name):
+            bigger_name = name
+    return bigger_name
+
+
+print(show_biggest_name(names_list))
