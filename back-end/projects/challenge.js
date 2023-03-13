@@ -3,7 +3,7 @@ const http = require('http');
 // const util = require('util'); // object to string;
 // const { StringDecoder } = require('string_decoder');
 
-const port = 3334;
+const port = 3335;
 const server = http.createServer();
 
 server.on('request', (req, res) => {
@@ -21,7 +21,7 @@ server.on('request', (req, res) => {
 
     req.on('end', (chunk) => {
       // console.log(req.body);
-      // console.log(req.url);
+      console.log(req.method);
       console.log(chunk);
       if (chunk) {
         buffer += chunk;
