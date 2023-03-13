@@ -18,4 +18,11 @@ def get_list_average(list):
     return total_sum / length
 
 
-print(get_list_average(numbers))
+# print(get_list_average(numbers))
+
+def show_asteriscs(n):
+    for row in range(n):
+        print(n * '*')
+
+
+print(show_asteriscs(10))
