@@ -5,4 +5,17 @@ def get_biggest(a, b):
         return b
 
 
-print(get_biggest(255, 10))
+# print(get_biggest(255, 10))
+
+numbers = list(range(1, 11))
+
+
+def get_list_average(list):
+    length = len(list)
+    total_sum = 0
+    for n in list:
+        total_sum += n
+    return total_sum / length
+
+
+print(get_list_average(numbers))
