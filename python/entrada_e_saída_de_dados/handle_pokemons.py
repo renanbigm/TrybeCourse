@@ -1,9 +1,11 @@
+import random
+import json
 # import json  # json é um modulo que vem embutido, porém precisamos importá-lo
 
 
 # with open("./entrada_e_saída_de_dados/pokemons.json") as file:
 #     content = file.read()  # leitura do arquivo
-#     pokemons = json.loads(content)["results"]  # o conteúdo é transformado estrutura python equivalente, dicionário neste caso.
+#     pokemons = json.loads(content)["results"]
 #     # acessamos a chave results que é onde contém nossa lista de pokemons
 
 # print(pokemons[0])  # imprime o primeiro pokemon da lista
@@ -16,7 +18,6 @@
 
 # print(pokemons[0])  # imprime o primeiro pokemon da lista
 
-import json
 
 # Leitura de todos os pokemons
 with open("./entrada_e_saída_de_dados/pokemons.json") as file:
@@ -37,8 +38,8 @@ grass_type_pokemons = [
 
 # abre o arquivo para escrita
 # with open("grass_pokemons.json", "w") as file:
-    # escreve no arquivo já transformando em formato json a estrutura
-    # json.dump(grass_type_pokemons, file)
+# escreve no arquivo já transformando em formato json a estrutura
+# json.dump(grass_type_pokemons, file)
 
 
 # def vertical_inverted_ladder(word):
@@ -50,8 +51,6 @@ grass_type_pokemons = [
 # if __name__ == "__main__":
 #     name = input("Digite um nome: ")
 #     vertical_inverted_ladder(name)
-
-import random
 
 WORDS = [
     "cat",
