@@ -9,15 +9,18 @@ class Tv:
     ligada: bool = False
 
     def aumentar_volume(self):
-        print(self.volume)
         if self.volume < 99:
             self.volume += 1
+            print(self.volume)
         else:
             print('Volume está no máximo')
-        print(self.volume)
 
     def diminuir_volume(self):
-        pass
+        if self.volume > 0:
+            self.volume -= 1
+            print(self.volume)
+        else:
+            print('Volume está no mínimo')
 
     def modificar_canal(self):
         pass
@@ -26,12 +29,10 @@ class Tv:
         pass
 
 
-tv1 = Tv(volume=50, canal=1, tamanho=32, ligada=True)
+tv1 = Tv(volume=3, canal=1, tamanho=32, ligada=True)
 
-tv1.aumentar_volume()
-tv1.aumentar_volume() 
-tv1.aumentar_volume() 
-tv1.aumentar_volume() 
-tv1.aumentar_volume() 
-tv1.aumentar_volume() 
-tv1.aumentar_volume() 
+tv1.diminuir_volume()
+tv1.diminuir_volume()
+tv1.diminuir_volume() 
+tv1.diminuir_volume() 
+
