@@ -2,24 +2,31 @@ from eletrodomesticos import Eletrodomestico
 
 
 class Pessoa:
-    def __init__(self, nome, saldo_na_conta):
+    def __init__(self, nome, idade=None, saldo_na_conta=None):
         self.nome = nome
         self.saldo_na_conta = saldo_na_conta
         self.ventilador = None
+        self.idade = idade
+        self.eletrodomesticos = []
 
-    def comprar(self, liquidificador):
-        if liquidificador.preco <= self.saldo_na_conta:
-            self.saldo_na_conta -= liquidificador.preco
-            self.ventilador = liquidificador
+    def comprar(self, eletrodomestico):
+        if eletrodomestico.preco <= self.saldo_na_conta:
+            self.saldo_na_conta -= eletrodomestico.preco
+            self.eletrodomestico.append(eletrodomestico)
 
     def __str__(self):
         if (self.ventilador):
             return f"{self.nome} - possui um ventilador."
-        return f"{self.nome} - não possui um ventilador."
+        return f"{self.nome}, {self.saldo_na_conta} - não possui ventilador."
 
 
 class Liquidificador(Eletrodomestico):
-    pass
+    def __init__(self, cor, potencia, tensao, preco, quantidade_de_portas=1):
+        # Chamada ao construtor da superclasse
+        super().__init__(cor, potencia, tensao, preco)
+
+        # Faz outras coisas específicas dessa subclasse
+        self.quantidade_de_portas = quantidade_de_portas
 
 
 venti = Liquidificador('preto', 120, 2, 70)
@@ -42,4 +49,4 @@ ventilador_branco = Ventilador("branco", potencia=250, tensao=220, preco=100)
 pessoa = Pessoa("Maria", saldo_na_conta=2000)
 pessoa.comprar(ventilador_branco)
 
-print(pessoa)
+print(Pessoa("Renan", saldo_na_conta=100, idade=30))
