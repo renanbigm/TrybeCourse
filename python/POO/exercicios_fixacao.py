@@ -1,3 +1,6 @@
+from eletrodomesticos import Eletrodomestico
+
+
 class Pessoa:
     def __init__(self, nome, saldo_na_conta):
         self.nome = nome
@@ -13,6 +16,14 @@ class Pessoa:
         if (self.ventilador):
             return f"{self.nome} - possui um ventilador."
         return f"{self.nome} - não possui um ventilador."
+
+
+class Liquidificador(Eletrodomestico):
+    pass
+
+
+venti = Liquidificador('preto', 120, 2, 70)
+venti.ligar(3)
 
 
 class Ventilador:
