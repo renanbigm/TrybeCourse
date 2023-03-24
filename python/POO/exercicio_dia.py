@@ -30,12 +30,17 @@ class Tv:
             raise ValueError('O canal deve estrar entre 1 e 99')
 
     def ligar_desligar(self):
-        pass
+        self.ligada = not self.ligada
+        print(f"{'Ligada' if self.ligada == True else 'Desligada'}")
 
 
 tv1 = Tv(volume=99, canal=1, tamanho=32, ligada=True)
 
-tv1.modificar_canal(100)
+tv1.modificar_canal(95)
+tv1.ligar_desligar()
+tv1.ligar_desligar()
+tv1.ligar_desligar()
+tv1.ligar_desligar()
 
 # tv1.aumentar_volume();
 # tv1.aumentar_volume();
