@@ -22,17 +22,26 @@ class Tv:
         else:
             print('Volume está no mínimo')
 
-    def modificar_canal(self):
-        pass
+    def modificar_canal(self, canal):
+        if 1 <= canal <= 99:
+            self.canal = canal
+            print(f"Você está no canal: {canal}")
+        else:
+            raise ValueError('O canal deve estrar entre 1 e 99')
 
     def ligar_desligar(self):
         pass
 
 
-tv1 = Tv(volume=3, canal=1, tamanho=32, ligada=True)
+tv1 = Tv(volume=99, canal=1, tamanho=32, ligada=True)
 
-tv1.diminuir_volume()
-tv1.diminuir_volume()
-tv1.diminuir_volume() 
-tv1.diminuir_volume() 
+tv1.modificar_canal(100)
+
+# tv1.aumentar_volume();
+# tv1.aumentar_volume();
+
+# tv1.diminuir_volume()
+# tv1.diminuir_volume()
+# tv1.diminuir_volume() 
+# tv1.diminuir_volume() 
 
